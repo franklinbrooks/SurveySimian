@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-export default class HelloWorld extends React.Component {
+export default class Survey extends React.Component {
   static propTypes = {
     name: PropTypes.string.isRequired, // this is passed from the Rails view
   };
@@ -14,7 +14,7 @@ export default class HelloWorld extends React.Component {
     // How to set initial state in ES6 class syntax @ https://facebook.github.io/react/docs/reusable-components.html#es6-classes
     this.state = {
       name: this.props.name,
-      email: ""
+      email: null
     };
   }
 
@@ -113,7 +113,7 @@ export default class HelloWorld extends React.Component {
       </select>
      </label>
      <br />
-    <label>Your email address <span className="red">* optional</span>
+    <label>Your email address <span classname="red">* optional</span>
       <input
         id="email"
         type="text"

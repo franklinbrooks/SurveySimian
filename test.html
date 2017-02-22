@@ -1,53 +1,11 @@
-import React, { PropTypes } from 'react';
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
 
-export default class HelloWorld extends React.Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired, // this is passed from the Rails view
-  };
-
-  /**
-   * @param props - Comes from your rails view.
-   * @param _railsContext - Comes from React on Rails
-   */
-  constructor(props, _railsContext) {
-    super(props);
-    // How to set initial state in ES6 class syntax @ https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = {
-      name: this.props.name,
-      email: ""
-    };
-  }
-
-  updateName = (name) => {
-    this.setState({
-      name
-    });
-  };
-
-  updateEmail = (email) => {
-    this.setState({
-      email
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        <h3>
-          Hello, {this.state.name}!
-        </h3>
-        <hr />
-        <form >
-          <label htmlFor="name">
-            Say hello to:
-          </label>
-          <input
-            id="name"
-            type="text"
-            value={this.state.name}
-            onChange={(e) => this.updateName(e.target.value)}
-          />
-          <br />
+  <form action="submit" method="get" accept-charset="utf-8">
     <label>After graduation and during the job search, how often should Hakuna Matata students remain in touch?
       <select required>
         <option value="Several times a week">Several times a week</option>
@@ -56,7 +14,7 @@ export default class HelloWorld extends React.Component {
         <option value="Once a month">Once a month</option>
       </select>
     </label>
-    <br />
+    <br>
     <label>Once we secure jobs, how often should HM students remain in touch?
       <select required>
         <option value="Several times a week">Several times a week</option>
@@ -65,7 +23,7 @@ export default class HelloWorld extends React.Component {
         <option value="Once a month">Once a month</option>
       </select>
     </label>
-    <br />
+    <br>
     <label>How often should HM students continue to meet up in person after GA?
       <select required>
         <option value="Several times a week">Several times a week</option>
@@ -74,7 +32,7 @@ export default class HelloWorld extends React.Component {
         <option value="Once a month">Once a month</option>
       </select>
     </label>
-    <br />
+    <br>
     <label>How should HM students continue to keep in touch after GA?
       <select required>
         <option value="Slack">Slack</option>
@@ -85,7 +43,7 @@ export default class HelloWorld extends React.Component {
         <option value="custom open source software app that we create">custom open source software app that we create</option>
       </select>
     </label>
-    <br />
+    <br>
     <label>Should HM instructors be included in our post-graduation network?
       <select required>
         <option value="Always welcome!">Always welcome!</option>
@@ -94,7 +52,7 @@ export default class HelloWorld extends React.Component {
         <option value="DND">DND</option>
       </select>
      </label>
-     <br />
+     <br>
     <label>How much do you see your peers here as a support system going forward?
       <select required>
         <option value="Indispensable. Need you all day, errday!">Indispensable. Need you all day, errday!</option>
@@ -103,7 +61,7 @@ export default class HelloWorld extends React.Component {
         <option value="So long, farewell, Auf Wiedersehen, Goodbye…">So long, farewell, Auf Wiedersehen, Goodbye…</option>
       </select>
      </label>
-     <br />
+     <br>
      <label>How can your HM peers best support you going forward?
       <select required>
         <option value="Job references: See something, say something!">Job references: See something, say something!</option>
@@ -112,22 +70,13 @@ export default class HelloWorld extends React.Component {
         <option value="Enough JavaScript. Can we just have fun and be human for a while, together?">Enough JavaScript. Can we just have fun and be human for a while, together?</option>
       </select>
      </label>
-     <br />
-    <label>Your email address <span className="red">* optional</span>
-      <input
-        id="email"
-        type="text"
-        name="email"
-        value={this.state.email}
-        onChange={(e) => this.updateEmail(e.target.value)}
-        />
+     <br>
+    <label>Your email address <span classname="red">* optional</span>
+      <input type="text" name="" value="">
     </label>
-
-    <br />
+    <br>
   <button type="">SUBMIT</button>
+  </form>
 
-        </form>
-      </div>
-    );
-  }
-}
+</body>
+</html>

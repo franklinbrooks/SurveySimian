@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestReactOnRails</title>
+    <title>SurveySimian</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/<react-version>/react.js"></script>
+    <script src="path/to/react-bootstrap-bower/react-bootstrap.min.js"></script>
+    <script>
+      var Alert = ReactBootstrap.Alert;
+    </script>
   </head>
 
   <body>
     <%= yield %>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/<react-version>/react.js"></script>
+  <script src="path/to/react-bootstrap-bower/react-bootstrap.min.js"></script>
+  <script>
+    var Alert = ReactBootstrap.Alert;
+  </script>
 </html>
