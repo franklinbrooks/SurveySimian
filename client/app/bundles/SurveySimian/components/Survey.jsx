@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-export default class Error extends React.Component {
+export default class Survey extends React.Component {
   static propTypes = {
     name: PropTypes.string.isRequired, // this is passed from the Rails view
   };
@@ -14,7 +14,7 @@ export default class Error extends React.Component {
     // How to set initial state in ES6 class syntax @ https://facebook.github.io/react/docs/reusable-components.html#es6-classes
     this.state = {
       name: this.props.name,
-      email: null
+      email: ""
     };
   }
 
@@ -24,11 +24,6 @@ export default class Error extends React.Component {
     });
   };
 
-  updateEmail = (email) => {
-    this.setState({
-      email
-    });
-  };
 
   render() {
     return (
@@ -37,7 +32,7 @@ export default class Error extends React.Component {
           Hello, {this.state.name}!
         </h3>
         <hr />
-        <form >
+    <form>
           <label htmlFor="name">
             Say hello to:
           </label>
@@ -113,7 +108,7 @@ export default class Error extends React.Component {
       </select>
      </label>
      <br />
-    <label>Your email address <span classname="red">* optional</span>
+    <label>Your email address <span className="red">* optional</span>
       <input
         id="email"
         type="text"
@@ -124,7 +119,7 @@ export default class Error extends React.Component {
     </label>
 
     <br />
-  <button type="">SUBMIT</button>
+    <button type="">SUBMIT</button>
 
         </form>
       </div>

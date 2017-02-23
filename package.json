@@ -1,14 +1,22 @@
 {
-  "name": "react-webpack-rails-tutorial",
-  "version": "0.0.1",
-  "private": true,
-  "engines": {
-    "node": "6.9.0",
-    "npm": "4.1.1"
+  "name": "something",
+  "dependencies": {
+    "browserify": "~> 10.2.4",
+    "browserify-incremental": "^3.0.1",
+    "material-ui": "^0.14.4",
+    "react": "^0.14.7",
+    "react-addons-create-fragment": "~> 0.14.0",
+    "react-addons-pure-render-mixin": "~> 0.14.0",
+    "react-addons-transition-group": "~> 0.14.0",
+    "react-addons-update": "~> 0.14.0",
+    "react-dom": "~> 0.14.0",
+    "react-tap-event-plugin": "~> 0.2.0"
   },
-  "scripts": {
-    "postinstall": "cd client && npm install",
-    "rails-server": "echo 'visit http://localhost:3000/hello_world' && foreman start -f Procfile.dev",
-    "test": "rspec"
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "devDependencies": {
+    "reactify": "^1.1.1"
   }
 }

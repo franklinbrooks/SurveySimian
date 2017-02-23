@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-export default class Results extends React.Component {
+export default class Index extends React.Component {
   static propTypes = {
     name: PropTypes.string.isRequired, // this is passed from the Rails view
   };
@@ -25,20 +25,12 @@ export default class Results extends React.Component {
     return (
       <div>
         <h3>
-          Hello, {this.state.name}!
+          Please take a short survey about the future of Hakuna Matata
         </h3>
         <hr />
-        <form >
-          <label htmlFor="name">
-            Say hello to:
-          </label>
-          <input
-            id="name"
-            type="text"
-            value={this.state.name}
-            onChange={(e) => this.updateName(e.target.value)}
-          />
-        </form>
+        <br />
+        <br />
+        <button>BEGIN</button>
       </div>
     );
   }

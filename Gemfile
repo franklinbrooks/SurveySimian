@@ -5,8 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'materialui-rails'
 #from StackOverflow
-gem 'react-bootstrap-rails'
+gem 'browserify-rails'
 #from README
 gem 'react_on_rails', '~>6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

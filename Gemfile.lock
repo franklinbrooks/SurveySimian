@@ -41,6 +41,14 @@ GEM
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (7.1.4)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
+    browserify-rails (4.0.0)
+      addressable (>= 2.4.0)
+      railties (>= 4.0.0, < 5.1)
+      sprockets (>= 3.6.0)
     builder (3.2.3)
     byebug (9.0.6)
     coffee-rails (4.2.1)
@@ -74,6 +82,11 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    materialui-rails (0.0.3)
+      browserify-rails (>= 2.2.1)
+      railties (>= 4.0.0)
+      react-rails (~> 1.4, >= 1.4.0)
+      sprockets (~> 3.0)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -119,6 +132,13 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    react-rails (1.10.0)
+      babel-transpiler (>= 0.7.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     react_on_rails (6.5.1)
       addressable
       connection_pool
@@ -168,11 +188,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  browserify-rails
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  materialui-rails
   mini_racer
   puma (~> 3.0)
   rails (~> 5.0.1)
