@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
+gem 'react-rails-img'
+#image helper
 gem 'materialui-rails'
 #from StackOverflow
 gem 'browserify-rails'

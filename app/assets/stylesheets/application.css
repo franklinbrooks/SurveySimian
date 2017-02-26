@@ -15,5 +15,22 @@
  */
 * {
   background-color: yellow;
+  font-size: 16px;
+}
+.container {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+.Syncopate {
+  font-family: 'Syncopate', sans-serif;
+}
+h1 {
+  margin: 0 auto;
+  color: red;
+  font-family: 'Syncopate', sans-serif;
+}
+label {
+  font-size: 1.75rem;
 }
 
