@@ -1,13 +1,6 @@
 import React, { PropTypes } from 'react';
-import { Button, Jumbotron, PageHeader, Panel, Image, Fade, ListGroup, ListGroupItem } from 'react-bootstrap';
-const Rebase = require('re-base');
-const base = Rebase.createClass({
-      apiKey: "AIzaSyDqscrqFDqnhdJJCjbxubJawD0FFPcLS0U",
-      authDomain: "surveysimian.firebaseapp.com",
-      databaseURL: "https://surveysimian.firebaseio.com",
-      storageBucket: "surveysimian.appspot.com",
-      messagingSenderId: "595746337881"
-}, 'surveysimian');
+import { Button, Jumbotron, PageHeader, Panel, Image, Fade, ListGroup, ListGroupItem, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+import axios from 'axios';
 
 export default class Results extends React.Component {
   static propTypes = {
@@ -20,15 +13,45 @@ export default class Results extends React.Component {
    */
   constructor(props, _railsContext) {
     super(props);
-
     // How to set initial state in ES6 class syntax
     // https://facebook.github.io/react/docs/reusable-components.html#es6-classes
-    this.state = { name: this.props.name };
+    this.state = {
+      Surveys: [],
+      responses: {
+        howOftenBeforeArray: [],
+        howOftenAfterArray: [],
+        howOftenLiveArray: [],
+        howMediaArray: [],
+        howFacultyArray: [],
+        howMuchPeerSupportArray: [],
+        howBestPeerSuportArray: [],
+        emailList: []
+      }
+    };
+    this.getSurveys = this.getSurveys.bind(this);
+    this.renderSurveys = this.renderSurveys.bind(this);
   }
 
-  updateName = (name) => {
-    this.setState({ name });
-  };
+  getSurveys() {
+    axios.get('https://surveysimian.firebaseio.com/.json')
+    .then((response) => {
+      this.setState({
+        Surveys: response.data
+      });
+      console.log("this.state.Surveys is " + this.state.Surveys);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  }
+
+   componentDidMount() {
+    this.getSurveys();
+  }
+
+  renderSurveys() {
+    console.log(this.state.Surveys);
+  }
 
   render() {
     return (
@@ -41,31 +64,52 @@ export default class Results extends React.Component {
             <ListGroupItem bsStyle="info">
               Q: After graduation and during the job search, how often should Hakuna Matata students remain in touch?
             </ListGroupItem>
-            howOftenBefore
+              Your response has been recorded.
+            </ListGroup>
+          </Panel>
 
-          </ListGroup>
-          </Panel>
           <Panel>
-            howOftenAfter
+            <ListGroupItem bsStyle="info">
+             Q. Once we secure jobs, how often should HM students remain in touch?
+            </ListGroupItem>
+            Your response has been recorded.
           </Panel>
+
           <Panel>
-            howOftenLive
+            <ListGroupItem bsStyle="info">
+              Q. How often should HM students continue to meet up in person after GA?
+            </ListGroupItem>
+            Your response has been recorded.
           </Panel>
+
           <Panel>
-            howMedia
+            <ListGroupItem bsStyle="info">
+              Q. How should HM students continue to keep in touch after GA?
+            </ListGroupItem>
+            Your response has been recorded.
           </Panel>
+
           <Panel>
-            howFaculty
+            <ListGroupItem bsStyle="info">
+              Q. Should GA instructors and faculty be included in our post-graduation network?
+            </ListGroupItem>
+            Your response has been recorded.
           </Panel>
+
           <Panel>
-            howMuchPeerSupport
+            <ListGroupItem bsStyle="info">
+              Q. How much do you see your peers here as a support system going forward?
+            </ListGroupItem>
+            Your response has been recorded.
           </Panel>
+
           <Panel>
-            howBestPeerSuport
+            <ListGroupItem bsStyle="info">
+              Q. How can your HM peers best support you going forward?
+            </ListGroupItem>
+            Your response has been recorded.
           </Panel>
-          <Panel>
-            email: "",
-          </Panel>
+
         <br />
             <a href={"/"}><Button bsSize="large" bsStyle="primary">HOME</Button></a>
       </div>
